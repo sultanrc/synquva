@@ -1,14 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import Navbar from "../components/Navbar";
 
 export default function Upload() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-white p-6">
-      <div className="flex justify-between w-full mb-4">
-        <img src="/logo.png" alt="logo" className="h-8 w-26" />
-        <button className="px-2 py-1 bg-white text-gray-500 rounded-lg outline-1 outline-gray-400 hover:bg-blue-700 transition">
-          Log Out
-        </button>
-      </div>
+      <Navbar />
       <div
         className="flex flex-col items-center justify-center rounded-2xl border border-gray-300 p-8 h-[calc(100vh-100px)] w-full gap-10"
         style={{
@@ -26,11 +23,11 @@ export default function Upload() {
             We’ll process it into structured data you can review and export.
           </h2>
         </div>
-        <div className=" bg-white p-2 flex flex-col items-center justify-center rounded-lg outline-1 outline-gray-300">
-          <div className="border-2 border-dashed border-gray-300 rounded-lg p-10 flex flex-col items-center justify-center hover:border-blue-400 transition bg-white/80">
+        <div className=" bg-white p-4 flex flex-col items-center justify-center rounded-lg outline-1 outline-gray-300">
+          <div className="flex flex-col items-center justify-center gap-4 border-2 border-dashed border-gray-300 rounded-lg p-16 hover:border-blue-400 transition bg-white/80">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-12 w-12 text-gray-400 mb-3"
+              className="h-12 w-12 text-gray-400"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -42,12 +39,15 @@ export default function Upload() {
                 d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1M12 12V4m0 8l-3-3m3 3l3-3"
               />
             </svg>
-            <p className="text-gray-600 mb-4">
+            <p className="text-gray-400 font-light">
               Click to upload or drag PDF here
             </p>
-            <button className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+            <Link
+              to="/result"
+              className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+            >
               Upload File
-            </button>
+            </Link>
           </div>
         </div>
       </div>
